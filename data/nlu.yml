@@ -1,0 +1,199 @@
+version: "3.1"
+nlu:
+
+- intent: input_user
+  examples: |
+    - the user is [Jack](PERSON)
+    - the user is [Jim](PERSON)
+    - The user is [Sam](PERSON)
+    - the user is [Susan](PERSON)
+    - the user is [Sophia](PERSON)
+    - The user is [Suna](PERSON)
+    - the user is [Emma](PERSON)
+    - the user is [Ben](PERSON)
+    - the user is [Lily](PERSON)
+    - the user is [Henry](PERSON)
+  
+
+- intent: continue_game
+  examples: |
+    - Yes， I want to continue
+    - Another game please
+    - Continue the game
+    - Keep playing
+    - Okay, continue
+    - I want to continue
+    - Let's continue
+    - Yes, please continue
+    - I still want to play
+    - Proceed with the game
+
+
+- intent: leave
+  examples: |
+    - no I have to leave
+    - no I have to go
+    - I have to go
+    - I have to leave
+    - I want to quit
+    - I'm done playing
+    - Stop the game
+    - Exit
+    - Leave
+    - I don't want to continue
+    - leave
+    - quit
+- intent: give_response_memory
+  examples: |
+    - The color on the left is [blue](COLOR)
+    - The color on the right is [red](COLOR)
+    - The left side is [blue](COLOR)
+    - The right side is [pink](COLOR)
+    - It is [yellow](COLOR)
+    - [orange](COLOR)
+    - [purple](COLOR)
+    - [pink](COLOR)
+    - [brown](COLOR)
+    - [black](COLOR)
+    - [white](COLOR)
+    - [gray](COLOR)
+    - [grey](COLOR)
+- intent: give_response_math
+  examples: |
+    - The result is [42](NUMBER)
+    - You get [37](NUMBER).
+    - [28](NUMBER).
+    - The answer is [10](NUMBER).
+    - It is (24)(NUMBER).
+    - [49](NUMBER)
+    - [5422](NUMBER)
+    - [252](NUMBER)
+    - [7](NUMBER)
+    - [42](NUMBER)
+    - [64](NUMBER)
+    - [60](NUMBER)
+    - [67223](NUMBER)
+- intent: mathematics
+  examples: |
+    - let's do math
+    - I like mathematics
+    - Math game sounds good
+    - Let's play a game with numbers
+    - Yes, let's do math problems
+    - Mathematics game, please
+    - Yes, I love math games
+    - Math games
+    - I want to play math
+    - I want to play mathematics
+    - Math
+    - math
+- intent: memory
+  examples: |
+    - memory game
+    - I want to play memory game
+    - Let's play memory game
+    - Can we play memory game
+    - I like memory game
+    - memory sounds fun
+    - I'm in the mood for memory game
+    - Let's do memory
+    - memory challenge
+    - memory exercise
+    - memory training
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - hey there
+    - let's go
+    - hey dude
+    - good afternoon
+- intent: introduce
+  examples: |
+    - my name is [Jack](PERSON)
+    - they call me [John](PERSON)
+    - I am [Michael](PERSON)
+    - this is [David](PERSON)
+    - this is [Alex](PERSON) speaking
+    - you can call me [Max](PERSON)
+    - please call me [Sam](PERSON)
+- intent: goodbye
+  examples: |
+    - see you
+    - good bye
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - bye-bye
+- intent: affirm
+  examples: |
+    - yes
+    - yes, I am ready
+    - Absolutely, I am ready
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - I'm ready, bring it on
+    - Yes, let's go
+    - Let's get started
+    - yep
+    - yup
+    - yeah
+- intent: deny
+  examples: |
+    - no, not ready yet
+    - no
+    - not now
+    - never
+    - I don't think so
+    - no way
+    - not really
+    - not yet
+    - I am not ready
+    - I need a little more time
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - who are you?
+    - where are you from?
+- intent: chitchat
+  examples: |
+    - Can you tell me a joke?
+    - How's the weather today?
+    - What's your favorite movie?
+    - Tell me a fun fact.
+    - Do you have any hobbies?
+    - How was your day?
+    - Who is the King of Sweden?
+
+- intent: repeat
+  examples: |
+    - could you repeat
+    - could yoy repeat that
+    - sorry, can you repeat
+    - can you repeat
+    - oh sorry. can you repeat
+    - sorry
+    - repeat please
+    - pardon
+    - I am sorry
+    - I'm sorry
+    - I couldn't hear you.
+    - I can't hear you. 
+    - what did you say
+    - what do you want
+
+    

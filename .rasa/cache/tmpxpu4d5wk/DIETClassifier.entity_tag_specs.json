@@ -1,0 +1,36 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-COLOR",
+      "2": "I-COLOR",
+      "3": "L-COLOR",
+      "4": "U-COLOR",
+      "5": "B-NUMBER",
+      "6": "I-NUMBER",
+      "7": "L-NUMBER",
+      "8": "U-NUMBER",
+      "9": "B-PERSON",
+      "10": "I-PERSON",
+      "11": "L-PERSON",
+      "12": "U-PERSON",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-COLOR": 1,
+      "I-COLOR": 2,
+      "L-COLOR": 3,
+      "U-COLOR": 4,
+      "B-NUMBER": 5,
+      "I-NUMBER": 6,
+      "L-NUMBER": 7,
+      "U-NUMBER": 8,
+      "B-PERSON": 9,
+      "I-PERSON": 10,
+      "L-PERSON": 11,
+      "U-PERSON": 12,
+      "O": 0
+    },
+    "num_tags": 13
+  }
+]

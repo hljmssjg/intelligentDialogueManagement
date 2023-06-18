@@ -1,0 +1,7 @@
+{
+  "rule_only_slots": [],
+  "rule_only_loops": [
+    "math_form",
+    "memory_form"
+  ]
+}

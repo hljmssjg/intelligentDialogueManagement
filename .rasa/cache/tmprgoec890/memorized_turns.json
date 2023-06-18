@@ -1,0 +1,12 @@
+{
+  "lookup": {
+    "eJyLrq6NBQAEOAGx": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohvSg1taS2NhYA6dwbhQ==": "utter_greet",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohvSg1taSWgBmlJSWpRfEQpbhMiAUAQvc0lw==": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohvSg1taSWgBmlJSWpRfEQpeSZQMAVKal5lbW1sQBgL04E": "utter_goodbye",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohvSg1taSWgBmlJSWpRfEQpeSZQMAVKal5lUQ6Ij8/JakyFZcRsQAoR2eB": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohvSg1taSWgBmlJSWpRfEQpeSZQMAViWlpmUW5tbWxAPzMTsk=": "cog_exercises",
+    "eJydjlEKgCAQBa/iATqBV4kQkacslMa6RiDePcF+Q+jvDQzDW2tbVD0Zl7FOKEWt6hgm2gNavbBTFsTulgzuDsWOolVgQNqkUUTAZqj/CpMX1nviYxZxKRjcYEcZ+TuyPcVXaPI=": "utter_goodbye",
+    "eJydj1EKgCAQRK/iATqBV4kQsykWSmPdohDvnmC/IfQ3A4/HTJ9yp9LOOI11QsFrlWow3m7Q6i0rRYEv7BHBhSFfqmi1MCC54ThEwKai/wyNFXaeibeWxIXF4AI7ioh/Je+XEKbxxrdkeACfpIM0": "action_listen"
+  }
+}

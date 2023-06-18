@@ -1,0 +1,146 @@
+version: '3.1'
+intents:
+- affirm
+- bot_challenge
+- chitchat
+- deny
+- give_response_math
+- give_response_memory
+- goodbye
+- greet
+- introduce
+- leave
+- mathematics
+- memory
+- nlu_fallback
+- input_user
+- continue_game
+- repeat
+responses:
+  utter_greet:
+  - text: $Hi! Welcome to cognitive exercises! Are you ready?$ @Hi! Welcome! Ready to start?@ &Hi! Are you ready?&
+  - text: $Hello! Welcome to the cognitive test! Are you ready?$ @Hi! Welcome! Ready to play?@ &Hello! Ready?&
+  - text: $Hello! Glad to see you today! Are you ready?$ @Hi! Welcome! Shall we start?@ &Greetings! Play?&
+  utter_affirm:
+  - text: $Which one do you want to play? Mathematics or memory game?$ @Which game? Math or memory game?@ &Math or memory game?&
+  - text: $Would you like to play the math? Or memory game?$ @Which one? Math or memory game?@ &Math or memory game?&
+  - text: $Do you prefer the mathematics game? Or memory game?$ @Which exercise? Math or memory game?@ &Math or memory game?&
+  utter_goodbye:
+  - text: $Ok! Good bye! Have a nice day!$ @Goodbye and have a nice day!@ &Bye!&
+  - text: $Alright! Take care and have a wonderful day!$ @Take care and have a wonderful day!@ &Good bye!&
+  - text: $Sure! Goodbye and have a fantastic day!$ @Goodbye and have a fantastic day!@ &Bye Bye!&
+  utter_iamabot:
+  - text: $I am a bot, powered by Rasa.$ @I'm a bot powered by Rasa.@ &I'm a Rasa-powered bot.&
+  - text: $I'm a bot, developed using Rasa.$ @I'm an AI bot developed using Rasa.@ &I'm a chat bot.&
+  - text: $I am an AI bot, built with Rasa.$ @I'm an AI bot powered by Rasa.@ &I'm a bot.&
+  utter_please_rephrase:
+  - text: $I am sorry. I did not quite understand that. Could you rephrase?$ @Sorry, could you rephrase your statement?@ &Sorry?&
+  - text: $Apologies, I couldn't understand. Can you rephrase that?$ @Sorry, can you rephrase that?@ &Sorry, rephrase please?&
+  - text: $Sorry, I didn't get that. Could you rephrase your statement?$ @I'm sorry, could you rephrase that?@  &pardon me?&
+  utter_chitchat:
+  - text: $Sorry, I cannot handle that request. Please continue the test!$ @Sorry, I can't assist with that. Let's continue the test!@ &Sorry, I don't know!&
+  - text: $I'm sorry. I cannot handle that request. Please proceed with the test!$ @Apologies, I'm unable to assist with that. Let's continue the test!@ &Sorry, I can't do it!&
+  - text: $Sorry. I'm not able to handle that. Please continue with the test!$ @Apologies, I can't deal with that. Let's continue the test!@ &Sorry! I can't handle that!&
+  utter_ask_quit:
+  - text: $Do you want to continue? Please let me know.$ @Do you want to keep going?@ &Continue?&
+  - text: $Are you interested in continuing? Please let me know.$ @Do you want to continue? Let me know.@ &Retry?&
+  - text: $Do you wish to continue the exercise? Please let me know.$ @Do you want to continue?@ &Another game?&
+  utter_submit:
+  - text: $Ok. Thanks for taking this test!$ @Alright. Thank you for taking the test!@ &OK!&
+  - text: $Great! Thanks for completing the test!$ @Awesome! Thanks for finishing the test!@ &Okay!&
+  - text: $Alright. Thank you for participating in this test!$ @Okay. Thanks for taking part in!@ &Alright!&
+  utter_repeat:
+  - text: REPEAT
+
+actions:
+- Submit_math_form
+- Submit_memory_form
+- action_ask_COLOR
+- action_ask_NUMBER
+- clean_all
+- set_user
+- utter_affirm
+- utter_ask_quit
+- utter_chitchat
+- utter_goodbye
+- utter_greet
+- utter_please_rephrase
+- utter_submit
+- utter_repeat
+- validate_math_form
+- validate_memory_form
+- action_repeat
+entities:
+- NUMBER
+- PERSON
+- COLOR
+validation_actions:
+- validate_math_form
+- validate_memory_form
+forms:
+  math_form:
+    required_slots:
+    - NUMBER
+    - quit
+  memory_form:
+    required_slots:
+    - COLOR
+    - quit
+slots:
+  COLOR:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: COLOR
+      conditions:
+      - active_loop: memory_form
+        requested_slot: COLOR
+  quit:
+    type: bool
+    influence_conversation: true
+    mappings:
+    - type: from_trigger_intent
+      intent:
+      - affirm
+      - continue_game
+      value: true
+      condition:
+      - active_loop: math_form
+        requested_slot: quit
+    - type: from_trigger_intent
+      intent: deny
+      value: false
+      condition:
+      - active_loop: math_form
+        requested_slot: quit
+  NUMBER:
+    type: float
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: NUMBER
+      conditions:
+      - active_loop: math_form
+        requested_slot: NUMBER
+  PERSON:
+    type: text
+    initial_value: 'Jim'
+    mappings:
+    - type: from_entity
+      entity: PERSON
+  user_provided_name:
+    type: bool
+    mappings:
+    - type: custom
+  math_answer:
+    type: any
+    mappings:
+    - type: custom
+  color_answer:
+    type: any
+    mappings:
+    - type: custom
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

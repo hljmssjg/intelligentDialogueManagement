@@ -1,0 +1,34 @@
+[
+  {
+    "text": "who is the president of Sweden?",
+    "intent": "nlu_fallback",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.004333625081926584
+    }
+  },
+  {
+    "text": "who is the author?",
+    "intent": "nlu_fallback",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.025188500061631203
+    }
+  },
+  {
+    "text": "Do you like playing basketball?",
+    "intent": "nlu_fallback",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.06194739788770676
+    }
+  },
+  {
+    "text": "who is the King of Norway?",
+    "intent": "nlu_fallback",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.006289949640631676
+    }
+  }
+]

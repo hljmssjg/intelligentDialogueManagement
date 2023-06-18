@@ -1,0 +1,6 @@
+[
+  {
+    "name": "PERSON",
+    "pattern": "(\\bsuna\\b|\\bthomas\\b|\\bjiangeng\\b|\\bola\\b)"
+  }
+]

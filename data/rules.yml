@@ -1,0 +1,117 @@
+version: "3.1"
+
+rules:
+
+- rule: Force-break form
+  steps:
+  - intent: leave
+  - action: action_deactivate_loop
+  - active_loop: null
+  - action: clean_all
+
+- rule: Set the User
+  steps:
+  - intent: input_user
+  - action: set_user
+
+
+- rule: Repeat_outLoop
+  condition:
+  - active_loop: null
+  steps:
+  - intent: repeat
+  - action: action_repeat
+
+- rule: Repeat_inLoop_math
+  condition:
+    # Condition that form is active.
+  - active_loop: math_form
+  steps:
+  - intent: repeat
+  - action: utter_repeat
+  - action: math_form
+  - active_loop: math_form
+
+
+- rule: Repeat_inLoop_memory
+  condition:
+    # Condition that form is active.
+  - active_loop: memory_form
+  steps:
+  - intent: repeat
+  - action: utter_repeat
+  - action: memory_form
+  - active_loop: memory_form
+
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Ask the user to rephrase whenever they send a message with low NLU confidence
+  steps:
+  - intent: nlu_fallback
+  - action: utter_please_rephrase
+
+
+- rule: deal with chitchat in math
+  condition:
+    # Condition that form is active.
+  - active_loop: math_form
+  steps:
+  - intent: chitchat
+  - action: utter_chitchat
+  - action: math_form
+  - active_loop: math_form
+
+- rule: deal with chitchat in memory
+  condition:
+    # Condition that form is active.
+  - active_loop: memory_form
+  steps:
+  - intent: chitchat
+  - action: utter_chitchat
+  - action: memory_form
+  - active_loop: memory_form
+
+
+- rule: Activate math form
+  steps:
+  - intent: mathematics
+  - action: math_form
+  - active_loop: math_form
+
+- rule: Submit math form
+  condition:
+  - active_loop: math_form
+  steps:
+  - action: math_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: Submit_math_form
+
+
+- rule: Activate memory form
+  steps:
+  - intent: memory
+  - action: memory_form
+  - active_loop: memory_form
+
+- rule: Submit memory form
+  condition:
+  - active_loop: memory_form
+  steps:
+  - action: memory_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: Submit_memory_form
+
+
