@@ -59,14 +59,17 @@ if __name__ == "__main__":
     # Initialize the recorder
     global SpeechRecognition
     SpeechRecognition = SpeechRecognitionModule("SpeechRecognition", IP, port)
-    # Waiting for usring speaking.
-    monitor(Robot, SpeechRecognition)
-    # Use Google Recognizer and get the result.
-    Recognizer = WAV2text('/home/jiangeng/intelligentDialogueManagement/simple_test/simple_out.wav')
-    try:
-        result = Recognizer.recognize()
-        Robot.say(str(result))
-    except UnknownValueError:
-        Robot.say('Google can not recognize your input.')
+    while True:
+        # Waiting for user speaking.
+        monitor(Robot, SpeechRecognition)
+        # Use Google Recognizer and get the result.
+        Recognizer = WAV2text('/home/jiangeng/intelligentDialogueManagement/simple_test/simple_out.wav')
+        try:
+            result = Recognizer.recognize()
+            Robot.say(str(result))
+            if str(result) == 'goodbye' or str(result) == 'good bye':
+                break
+        except UnknownValueError:
+            Robot.say('Google can not recognize your input.')
     # Make Pepper to repeat the answer from Google.
 
