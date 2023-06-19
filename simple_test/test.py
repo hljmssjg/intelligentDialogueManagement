@@ -1,5 +1,6 @@
 from pythonScript.ControlPepper import ControlPepper
 from pythonScript.simple_sound_stream import SpeechRecognitionModule
+from pythonScript.WAV2text import WAV2text
 import time
 
 
@@ -39,3 +40,8 @@ if __name__ == "__main__":
 
     global SpeechRecognition
     SpeechRecognition = SpeechRecognitionModule("SpeechRecognition", IP, port)
+
+    monitor(Robot, SpeechRecognition)
+    Recognizer = WAV2text('/home/jiangeng/intelligentDialogueManagement/test/simple_out.wav')
+    result = Recognizer.recognize()
+    Robot.say(result)
