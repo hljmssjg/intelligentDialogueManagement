@@ -30,11 +30,12 @@ Or, you could just simply download ZIP file.
 
 2. Download NAOqi API from [Aldebaran website](https://www.aldebaran.com/en/support/pepper-naoqi-2-9/downloads-softwares). From the download page, select the **Old: Pepper SDK** (not Choregraphe), and download the archive.   Extract the archive to an arbitrary location, and remember that folder path.
 
-3. To use this Intelligent dialogue management, we should set the SDK path. Open '***intelligentDialogueManagement/set_paths.sh***', Edit line 10 in **set_paths.sh** by replacing everything after the colon with the path to the **site-packages** folder inside the extracted NAOqi API folder. For example:
+3. To use this Intelligent dialogue management, we should set the SDK path. Open '***intelligentDialogueManagement/set_paths.sh***', Edit line 10 in **set_paths.sh** by replacing everything after the colon with the path to the **site-packages** folder inside the extracted NAOqi API folder. For example:  
    `export PYTHONPATH=${PYTHONPATH}:/home/jiangeng/WoZ4U/pynaoqi-python2.7-2.5.7.1-linux64/lib/python2.7/site-packages`.   
-   And, edit line 11 in **set_paths.sh** by replacing everything after the colon with the path to the **lib** folder inside the extracted NAOqi folder. For example: `export DYLD_LIBRARY_PATH=${DYLD_LIBRARY_PATH}:/home/jiangeng/WoZ4U/pynaoqi-python2.7-2.5.7.1-linux64/lib`.  
+   And, edit line 11 in **set_paths.sh** by replacing everything after the colon with the path to the **lib** folder inside the extracted NAOqi folder. For example:   
+   `export DYLD_LIBRARY_PATH=${DYLD_LIBRARY_PATH}:/home/jiangeng/WoZ4U/pynaoqi-python2.7-2.5.7.1-linux64/lib`.  
    For more details, please refer to the [WOZ4U](https://github.com/frietz58/WoZ4U)) project.
-
+   
 4. Install [rasa dialogue management](https://rasa.com/docs/rasa/installation/installing-rasa-open-source/). In this project, you need to install Rasa open source in your **Python 3** environment, so please use **pip3**:  
    `pip3 install rasa`.  
    And install dependencies for **spaCy**:   
@@ -43,7 +44,7 @@ Or, you could just simply download ZIP file.
 
 5. Install [SpeechRecognition](https://pypi.org/project/SpeechRecognition/) library in your **Python 2** environment, please use **pip**:   
    `pip install SpeechRecognition`.  
-   It should be noted that this library only supports python3.8+, but we need to use it under python2. To do this, we need to rewrite its source code.
+   It should be noted that this library only supports python3.8 +, but we need to use it under python 2. To do this, we need to rewrite its source code.
 
    1. Open a terminal, use `pip show SpeechRecognition` command to check the location of **SpeechRecognition**.
    2. When you get the install location of S**peechRecognition**, for example, `/home/jiangeng/.local/lib/python2.7/site-packages`, open the `/home/jiangeng/.local/lib/python2.7/site-packages/speech_recognition/__init__.py` file.
@@ -79,7 +80,8 @@ Or, you could just simply download ZIP file.
 
 You can test the Rasa dialog manager locally without connecting to the Pepper robot. Under the folder '***intelligentDialogueManagement***',
 
-1. Open another terminal, enter `rasa run actions`.
+1. Open another terminal, enter `rasa run actions`:  
+   ![Rasa run actions](https://github.com/hljmssjg/intelligentDialogueManagement/blob/main/README_IMG/ImgServer.png)
 2. Open another terminal, enter `rasa shell`. Then you could talk to your assistant on the command line.
 
 If you meet an error: `rasa_nlu.model.UnsupportedModelError: The model version is to old to be loaded by this Rasa NLU instance. Either retrain the model, or run withan older version...`, Under the folder '***intelligentDialogueManagement***',
