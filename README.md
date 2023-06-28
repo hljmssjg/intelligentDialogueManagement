@@ -80,9 +80,10 @@ Or, you could just simply download ZIP file.
 
 You can test the Rasa dialog manager locally without connecting to the Pepper robot. Under the folder '***intelligentDialogueManagement***',
 
-1. Open another terminal, enter `rasa run actions`:  
-   ![Rasa run actions](https://github.com/hljmssjg/intelligentDialogueManagement/blob/main/README_IMG/ImgServer.png)
-2. Open another terminal, enter `rasa shell`. Then you could talk to your assistant on the command line.
+1. Open a terminal, enter `rasa run actions`:  
+   ![Rasa run actions](https://github.com/hljmssjg/intelligentDialogueManagement/blob/main/README_IMG/runActions.png)
+2. Open another terminal, enter `rasa shell`. Then you could talk to your assistant on the command line.  
+   ![Rasa shell](https://github.com/hljmssjg/intelligentDialogueManagement/blob/main/README_IMG/rasaShell.png)
 
 If you meet an error: `rasa_nlu.model.UnsupportedModelError: The model version is to old to be loaded by this Rasa NLU instance. Either retrain the model, or run withan older version...`, Under the folder '***intelligentDialogueManagement***',
 
@@ -93,12 +94,19 @@ If you meet an error: `rasa_nlu.model.UnsupportedModelError: The model version i
 
 Under the folder '***intelligentDialogueManagement***',
 
-1. Open a terminal, enter `rasa run`.
-2. Open another terminal, enter `rasa run actions`.
+1. Open a terminal, enter `rasa run`.  
+   ![Rasa run](https://github.com/hljmssjg/intelligentDialogueManagement/blob/main/README_IMG/rasaRun.png)
+2. Open another terminal, enter `rasa run actions`.  
+   ![Rasa run actions](https://github.com/hljmssjg/intelligentDialogueManagement/blob/main/README_IMG/runActions.png)
 3. Open the third terminal,  
-   enter `cd pythonScript` and `python ImgServer.py `.
+   enter `cd pythonScript` and `python ImgServer.py `.  
+   ![Img Server](https://github.com/hljmssjg/intelligentDialogueManagement/blob/main/README_IMG/ImgServer.png)
 4. Open the last terminal,  
-   enter `source set_paths.sh `, `cd pythonScript` and `python Nerve.py`.
+   enter `source set_paths.sh `. You will get a response: **Setting environment variables for Bash on Linux/Mac** .    
+   
+   Then,  enter `cd pythonScript` and `python Nerve.py`.
+   
+   ![Nerve](https://github.com/hljmssjg/intelligentDialogueManagement/blob/main/README_IMG/Nerve.png)
 
 ## Test
 
