@@ -2,6 +2,8 @@
 
 This code represents an intelligible dialogue manager designed for social robots. It was developed as part of a master's program at Umeå University.
 
+
+
 ## Environment
 
 Rasa Version      :         3.4.2  
@@ -39,8 +41,8 @@ Or, you could just simply download ZIP file.
 4. Install [rasa dialogue management](https://rasa.com/docs/rasa/installation/installing-rasa-open-source/). In this project, you need to install Rasa open source in your **Python 3** environment, so please use **pip3**:  
    `pip3 install rasa`.  
    And install dependencies for **spaCy**:   
-   `pip3 install rasa[spacy]
-   python3 -m spacy download en_core_web_md`  
+   `pip3 install rasa[spacy]`  
+   `python3 -m spacy download en_core_web_md`  
 
 5. Install [SpeechRecognition](https://pypi.org/project/SpeechRecognition/) library in your **Python 2** environment, please use **pip**:   
    `pip install SpeechRecognition`.  
